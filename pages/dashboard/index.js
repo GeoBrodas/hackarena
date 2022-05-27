@@ -1,7 +1,11 @@
-import { Center } from '@chakra-ui/react';
+import { Button, Center, HStack } from '@chakra-ui/react';
 import { getSession } from 'next-auth/react';
 import Head from 'next/head';
 import DashboardLayout from '../../layouts/DashboardLayout';
+
+import { AiOutlinePlus } from 'react-icons/ai';
+import HackathonsByOrg from '../../components/dashboard/HackathonsByOrg';
+import Link from 'next/link';
 
 function DashboardPage() {
   return (
@@ -11,7 +15,15 @@ function DashboardPage() {
       </Head>
 
       <DashboardLayout>
-        <h1>Dashbord</h1>
+        {/* Admin Board */}
+        <HStack>
+          <Link href="/dashboard/new-event">
+            <Button leftIcon={<AiOutlinePlus />}>New Event</Button>
+          </Link>
+        </HStack>
+
+        {/* List of hackathons the organiser has created */}
+        <HackathonsByOrg />
       </DashboardLayout>
     </Center>
   );

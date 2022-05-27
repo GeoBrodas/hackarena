@@ -1,4 +1,4 @@
-import { Box, HStack, Stack, Text } from '@chakra-ui/react';
+import { Box, HStack, Stack, Text, Link } from '@chakra-ui/react';
 import Image from 'next/image';
 
 function OrganizerDetails() {
@@ -33,9 +33,9 @@ function OrganizerDetails() {
 
       {/* Socials */}
       <Stack direction={'row'} alignItems={'center'}>
-        <Text fontSize="lg">Twitter</Text>
-        <Text fontSize="lg">LinkedIn</Text>
-        <Text fontSize="lg">Discord</Text>
+        <Link fontSize="lg">Twitter</Link>
+        <Link fontSize="lg">LinkedIn</Link>
+        <Link fontSize="lg">Discord</Link>
       </Stack>
     </HStack>
   );

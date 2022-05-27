@@ -11,6 +11,9 @@ function SignInPage() {
       style={{
         height: '100vh',
         backgroundImage: 'url(/svg/bg.svg)',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
       }}
     >
       <Head>
@@ -19,10 +22,10 @@ function SignInPage() {
 
       <VStack
         style={{
-          width: '35%',
           backgroundColor: '#fff',
           height: '50%',
         }}
+        width={{ base: '80%', md: '60%', lg: '35%' }}
         rounded="lg"
         paddingX="30px"
         alignItems="center"
@@ -56,12 +59,14 @@ function SignInPage() {
 
         <Link href="/">
           <Button
+            variant={'outline'}
             leftIcon={<BsReverseBackspaceReverse />}
             width={'30%'}
+            borderWidth="2px"
+            borderColor="twitter.300"
             style={{
               marginTop: '20px',
             }}
-            bg={'twitter.100'}
             _hover={{
               bg: 'twitter.300',
             }}

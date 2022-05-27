@@ -4,11 +4,11 @@ function VenueDetails() {
   return (
     <Stack padding={'30px'}>
       <Text fontSize={'xl'}>
-        <Kbd>Venue:</Kbd>
+        <Kbd>Dates:</Kbd>
         <Kbd>24-10-2001</Kbd> till <Kbd>26-10-2001</Kbd>
       </Text>
       <Text fontSize={'xl'}>
-        <Kbd>Location:</Kbd>
+        <Kbd>Venue:</Kbd>
         Panjim{' '}
       </Text>
       <Text fontSize={'xl'}>

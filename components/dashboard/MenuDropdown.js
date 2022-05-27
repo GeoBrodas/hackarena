@@ -1,4 +1,10 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import {
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from '@chakra-ui/react';
 import { CgChevronDown } from 'react-icons/cg';
 import { getSession, signOut } from 'next-auth/react';
 
@@ -8,9 +14,12 @@ import { BsDiscord, BsGithub } from 'react-icons/bs';
 function MenuDropdown() {
   return (
     <Menu>
-      <MenuButton as={Button} rounded="full">
-        <CgChevronDown />
-      </MenuButton>
+      <MenuButton
+        as={IconButton}
+        aria-label="Options"
+        rounded="full"
+        icon={<CgChevronDown />}
+      />
 
       <MenuList>
         <MenuItem icon={<FaSignOutAlt />} onClick={() => signOut()}>

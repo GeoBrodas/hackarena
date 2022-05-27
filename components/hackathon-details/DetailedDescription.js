@@ -1,4 +1,11 @@
 import { Stack, Text } from '@chakra-ui/react';
+import {
+  List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList,
+} from '@chakra-ui/react';
 
 function DetailedDescription() {
   return (
@@ -16,6 +23,16 @@ function DetailedDescription() {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
         qui officia deserunt mollit anim id est laborum.
       </Text>
+      <Text fontWeight={'bold'} fontSize="lg">
+        {' '}
+        Rules
+      </Text>
+      <OrderedList>
+        <ListItem>Lorem ipsum dolor sit amet</ListItem>
+        <ListItem>Consectetur adipiscing elit</ListItem>
+        <ListItem>Integer molestie lorem at massa</ListItem>
+        <ListItem>Facilisis in pretium nisl aliquet</ListItem>
+      </OrderedList>
     </Stack>
   );
 }
