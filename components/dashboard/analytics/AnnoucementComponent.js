@@ -63,7 +63,7 @@ function AnnouncementComponent({ eventId }) {
         You cannot revoke your announcement once posted!
       </Alert>
 
-      <Text fontWeight="bold">What's the good news?</Text>
+      <Text fontWeight="bold">Whats the good news?</Text>
       <Input
         placeholder="Price Pool doubled!"
         value={data.title}

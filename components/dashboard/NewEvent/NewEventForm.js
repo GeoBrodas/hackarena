@@ -333,7 +333,7 @@ function NewEventForm() {
         {/* eslint-disable-next-line react/no-unescaped-entities */}
 
         {/* Title of the event */}
-        <Text fontWeight="semibold">Let's start with the name, shall we?</Text>
+        <Text fontWeight="semibold">Lets start with the name, shall we?</Text>
         {error === 'title' && data.title.length === 0 && (
           <AlertInput title="You missed the most important part!" />
         )}
@@ -377,6 +377,7 @@ function NewEventForm() {
             <AlertInput title="Atleast a whatsapp invite should be available" />
           )}
           <InputGroup>
+            {/* eslint-disable-next-line react/no-children-prop */}
             <InputLeftElement children={<BsWhatsapp />} pointerEvents="none" />
             <Input
               type="text"
@@ -386,6 +387,7 @@ function NewEventForm() {
             />
           </InputGroup>
           <InputGroup>
+            {/* eslint-disable-next-line react/no-children-prop */}
             <InputLeftElement children={<BsTwitter />} pointerEvents="none" />
             <Input
               type="text"
@@ -395,6 +397,7 @@ function NewEventForm() {
             />
           </InputGroup>
           <InputGroup>
+            {/* eslint-disable-next-line react/no-children-prop */}
             <InputLeftElement children={<BsInstagram />} pointerEvents="none" />
             <Input
               type="text"
@@ -413,7 +416,7 @@ function NewEventForm() {
             marginTop: '40px',
           }}
         >
-          Now let's get some more details about the hackathon?
+          Now lets get some more details about the hackathon?
         </Text>
 
         <Stack

@@ -1,13 +1,17 @@
+import Head from 'next/head';
 import HackathonDetailsComponent from '../../components/hackathon-details/HackathonDetailsComponent';
 
 function HackathonDetailsPage({ data, data2 }) {
   const parsedData = JSON.parse(data);
   const parsedData2 = JSON.parse(data2);
 
-  console.log(parsedData2);
+  console.log(parsedData);
 
   return (
     <div>
+      <Head>
+        <title>{parsedData[0].title}</title>
+      </Head>
       <HackathonDetailsComponent
         data={parsedData}
         announcements={parsedData2}
