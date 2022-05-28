@@ -7,8 +7,16 @@ import {
 } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 
-function StatsComponent({ data }) {
+function StatsComponent({ data, ic }) {
   var relativeTime = require('dayjs/plugin/relativeTime');
+
+  const filteredIc = ic.data.filter((ic) => {
+    return ic.eventId === data._id;
+  });
+
+  // console.log(ic);
+
+  console.log(filteredIc);
 
   dayjs.extend(relativeTime);
   return (
@@ -21,7 +29,7 @@ function StatsComponent({ data }) {
       <StatNumber>{dayjs(data.startDate).from()}</StatNumber>
       <StatHelpText alignItems={'center'}>
         <StatUpArrow marginRight={'5px'} type="increase" />
-        {data.intrestedPeople} people interested
+        {filteredIc.length} people interested
       </StatHelpText>
     </Stat>
   );
