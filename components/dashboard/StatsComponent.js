@@ -12,9 +12,13 @@ function StatsComponent({ data }) {
 
   dayjs.extend(relativeTime);
   return (
-    <Stat>
+    <Stat
+      style={{
+        margin: '0 0 0 15px',
+      }}
+    >
       <StatLabel>Starts</StatLabel>
-      <StatNumber>{dayjs(data.startDate).to()}</StatNumber>
+      <StatNumber>{dayjs(data.startDate).from()}</StatNumber>
       <StatHelpText alignItems={'center'}>
         <StatUpArrow marginRight={'5px'} type="increase" />
         {data.intrestedPeople} people interested

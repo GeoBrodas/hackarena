@@ -1,7 +1,9 @@
-import { Box, HStack, Stack, Text, Link } from '@chakra-ui/react';
+import { Box, HStack, Stack, Text, IconButton } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { BsWhatsapp, BsInstagram, BsTwitter, BsGlobe } from 'react-icons/bs';
 
-function OrganizerDetails() {
+function OrganizerDetails({ data }) {
   return (
     <HStack
       bg="red.50"
@@ -18,7 +20,7 @@ function OrganizerDetails() {
               borderRadius: '100%',
             }}
             alt="badge"
-            src="https://bit.ly/ryan-florence"
+            src={data.authorImage}
             width="60px"
             height="60px"
           />
@@ -26,16 +28,72 @@ function OrganizerDetails() {
 
         {/* Details */}
         <Stack direction={'column'} spacing="0">
-          <Text fontSize="lg">Organised by Team Cursor</Text>
-          <Text fontWeight="light">Posted on 23-10-2001</Text>
+          <Text fontSize="lg">Organised by {data.author}</Text>
+          <Text fontWeight="light">
+            Posted on{' '}
+            {new Date(data.createdAt).toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })}
+          </Text>
         </Stack>
       </Stack>
 
       {/* Socials */}
       <Stack direction={'row'} alignItems={'center'}>
-        <Link fontSize="lg">Twitter</Link>
-        <Link fontSize="lg">LinkedIn</Link>
-        <Link fontSize="lg">Discord</Link>
+        {data.twitter && (
+          <a target="_blank" href={data.twitter} rel="noreferrer">
+            <IconButton
+              bg="twitter.100"
+              _hover={{
+                bg: 'twitter.400',
+              }}
+              icon={<BsTwitter />}
+            />
+          </a>
+        )}
+
+        {data.instagram && (
+          <a target="_blank" href={data.instagram} rel="noreferrer">
+            <IconButton
+              bg="twitter.100"
+              _hover={{
+                bg: 'twitter.400',
+              }}
+              icon={<BsInstagram />}
+            />
+          </a>
+        )}
+
+        {data.whatsapp && (
+          <a target="_blank" href={data.whatsapp} rel="noreferrer" passHref>
+            <IconButton
+              bg="twitter.100"
+              _hover={{
+                bg: 'twitter.400',
+              }}
+              icon={<BsWhatsapp />}
+            />
+          </a>
+        )}
+
+        {data.organiserPage && (
+          <a
+            target="_blank"
+            href={data.organiserPage}
+            rel="noreferrer"
+            passHref
+          >
+            <IconButton
+              bg="twitter.100"
+              _hover={{
+                bg: 'twitter.400',
+              }}
+              icon={<BsGlobe />}
+            />
+          </a>
+        )}
       </Stack>
     </HStack>
   );

@@ -1,23 +1,22 @@
 import { Kbd, Stack, Text } from '@chakra-ui/react';
 
-function VenueDetails() {
+function VenueDetails({ data }) {
   return (
     <Stack padding={'30px'}>
       <Text fontSize={'xl'}>
         <Kbd>Dates:</Kbd>
-        <Kbd>24-10-2001</Kbd> till <Kbd>26-10-2001</Kbd>
+        <Kbd> {data.startDate}</Kbd> to <Kbd>{data.endDate}</Kbd>
       </Text>
       <Text fontSize={'xl'}>
         <Kbd>Venue:</Kbd>
-        Panjim{' '}
+        {data.city}, {data.state}
       </Text>
       <Text fontSize={'xl'}>
         <Kbd>Official Page:</Kbd>
-        Team Cursor
+        {data.organiserPage}
       </Text>
       <Text fontSize={'xl'}>
-        <Kbd>Entry fee:</Kbd>
-        Free!
+        <Kbd>Entry fee:</Kbd>₹ {data.fee}
       </Text>
     </Stack>
   );

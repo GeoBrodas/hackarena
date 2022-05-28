@@ -1,31 +1,35 @@
 import { Center, Heading, Kbd, Stack, Text } from '@chakra-ui/react';
 import Announcements from './Announcements';
 import DetailedDescription from './DetailedDescription';
-import FAQS from './FAQS';
+import FaqsPage from './FaqsPage';
+import Interested from './Interested';
 import OrganizerDetails from './OrganizerDetails';
 import VenueDetails from './VenueDetails';
 
-function HackathonDetailsComponent() {
+function HackathonDetailsComponent({ data, announcements }) {
   return (
     <Center marginY={'60px'}>
       <Stack direction={'column'} textAlign={'left'} width={'70%'}>
         {/* Title of the hackathon */}
-        <Heading textAlign={'left'}>Technothon 2022 🎉</Heading>
+        <Heading textAlign={'left'}>{data[0].title}</Heading>
 
         {/* Organiser details */}
-        <OrganizerDetails />
+        <OrganizerDetails data={data[0]} />
 
         {/* Venue details, etc */}
-        <VenueDetails />
+        <VenueDetails data={data[0]} />
 
         {/* Detailed Description */}
-        <DetailedDescription />
+        <DetailedDescription data={data[0]} />
+
+        {/* Registration for interested People */}
+        <Interested />
 
         {/* FAQs */}
-        <FAQS />
+        <FaqsPage faqs={data[0]} />
 
         {/* Announcements */}
-        <Announcements />
+        <Announcements data={announcements} />
       </Stack>
     </Center>
   );

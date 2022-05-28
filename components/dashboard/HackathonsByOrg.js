@@ -1,21 +1,26 @@
-import { Stack } from '@chakra-ui/react';
+import { Stack, Text } from '@chakra-ui/react';
 import Hackathon from '../ui/Hackathon';
 
-function HackathonsByOrg() {
-  const hackathonData = {
-    title: "Technothon '22",
-    startDate: '2022-05-25',
-    endDate: '2022-05-27',
-    intrestedPeople: 233,
-  };
-
+function HackathonsByOrg({ data }) {
   return (
     <Stack
       style={{
         marginTop: '30px',
       }}
     >
-      <Hackathon hackathonData={hackathonData} />
+      {data.length !== 0 ? (
+        data.map((hackathon, index) => {
+          return (
+            <Hackathon
+              shouldDelete={true}
+              key={index}
+              hackathonData={hackathon}
+            />
+          );
+        })
+      ) : (
+        <Text textAlign="center">No hackathons organised yet!</Text>
+      )}
     </Stack>
   );
 }

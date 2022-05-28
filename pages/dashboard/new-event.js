@@ -1,9 +1,14 @@
 import { getSession } from 'next-auth/react';
+import Head from 'next/head';
 import NewEventForm from '../../components/dashboard/NewEvent/NewEventForm';
 
 function NewEventPage() {
   return (
     <div>
+      <Head>
+        <title>New Event?</title>
+      </Head>
+
       <NewEventForm />
     </div>
   );

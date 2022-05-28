@@ -1,4 +1,4 @@
-import { Button, Center, HStack } from '@chakra-ui/react';
+import { Button, Center, HStack, Image } from '@chakra-ui/react';
 import { getSession } from 'next-auth/react';
 import Head from 'next/head';
 import DashboardLayout from '../../layouts/DashboardLayout';
@@ -7,7 +7,9 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import HackathonsByOrg from '../../components/dashboard/HackathonsByOrg';
 import Link from 'next/link';
 
-function DashboardPage() {
+function DashboardPage({ hackathons }) {
+  let data = JSON.parse(hackathons);
+
   return (
     <Center>
       <Head>
@@ -23,7 +25,7 @@ function DashboardPage() {
         </HStack>
 
         {/* List of hackathons the organiser has created */}
-        <HackathonsByOrg />
+        <HackathonsByOrg data={data} />
       </DashboardLayout>
     </Center>
   );
@@ -42,8 +44,32 @@ export async function getServerSideProps(context) {
     };
   }
 
+  // console.log(session.user.email);
+  let data;
+  try {
+    const response = await fetch(
+      process.env.NEXT_PUBLIC_BASE_URL +
+        `/api/get-dashboard-events?email=${session.user.email}`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          // 'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+      }
+    );
+
+    data = await response.json();
+  } catch (err) {
+    console.log(err);
+  }
+
+  console.log(data);
+
   return {
-    props: {},
+    props: {
+      hackathons: JSON.stringify(data.data) || null,
+    },
   };
 }
 
