@@ -80,7 +80,9 @@ function Interested({ eventId }) {
 
   return (
     <>
-      <Button onClick={onOpen}>Show Your Interest</Button>
+      <Button onClick={onOpen}>
+        Interested? Let the organiser know your arrival!
+      </Button>
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
