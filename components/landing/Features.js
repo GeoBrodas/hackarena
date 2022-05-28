@@ -17,7 +17,14 @@ function Features() {
       }}
     >
       <VStack spacing={'30px'}>
-        <Heading marginX={'auto'} textAlign={'center'}>
+        <Heading
+          bgGradient="linear(to-l, #7928CA, #FF0080)"
+          bgClip="text"
+          fontSize="4xl"
+          fontWeight="extrabold"
+          marginX={'auto'}
+          textAlign={'center'}
+        >
           Features ⚡
         </Heading>
 
