@@ -1,9 +1,9 @@
 import {
   Stat,
+  StatArrow,
   StatHelpText,
   StatLabel,
   StatNumber,
-  StatUpArrow,
 } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 
@@ -26,7 +26,10 @@ function StatsComponent({ data, ic }) {
       <StatLabel>Starts</StatLabel>
       <StatNumber>{dayjs(data.startDate).from()}</StatNumber>
       <StatHelpText alignItems={'center'}>
-        <StatUpArrow marginRight={'5px'} type="increase" />
+        <StatArrow
+          marginRight={'5px'}
+          type={`${filteredIc.length > 0 ? 'increase' : 'decrease'}`}
+        />
         {filteredIc.length} people interested
       </StatHelpText>
     </Stat>
