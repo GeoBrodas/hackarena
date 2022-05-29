@@ -50,7 +50,7 @@ export async function getServerSideProps() {
     );
 
     data2 = await reponse.json();
-    console.log(data2);
+    // console.log(data2);
   } catch (error) {
     console.log(error);
   }

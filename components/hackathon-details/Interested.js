@@ -39,8 +39,6 @@ function Interested({ eventId }) {
   const initialRef = useRef();
   const finalRef = useRef();
 
-  console.log(data);
-
   async function sendData() {
     // form validation
     if (data.gitHubUsername === '' || data.email === '') {
@@ -64,19 +62,28 @@ function Interested({ eventId }) {
       const parse = await response.json();
 
       if (!parse.id) {
-        setError('Invalid GitHub USername');
+        setError('Invalid GitHub Username');
         setLoading(false);
         return;
       }
 
-      // console.log(parse);
+      console.log(parse);
     } catch (err) {
-      setLoading(false);
-      console.log(err);
-      alert(
-        'Something went wrong, if this persists, please context the developer'
-      );
-      return;
+      // if 404 then alert user that GitHub username is invalid
+      if (err.message === 'Failed to fetch') {
+        console.log(err.message);
+        setError('Invalid GitHub Username');
+        setLoading(false);
+        return;
+      } else {
+        setLoading(false);
+
+        console.log(err);
+        alert(
+          'Something went wrong, if this persists, please context the developer'
+        );
+        return;
+      }
     }
 
     try {
