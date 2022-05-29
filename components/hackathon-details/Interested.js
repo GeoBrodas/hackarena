@@ -17,6 +17,8 @@ import {
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
+import AlertInput from '../ui/AlertInput';
+
 import { useRef, useState } from 'react';
 
 function Interested({ eventId }) {
@@ -25,6 +27,7 @@ function Interested({ eventId }) {
   // console.log(eventId);
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const router = useRouter();
 
@@ -36,6 +39,8 @@ function Interested({ eventId }) {
   const initialRef = useRef();
   const finalRef = useRef();
 
+  console.log(data);
+
   async function sendData() {
     // form validation
     if (data.gitHubUsername === '' || data.email === '') {
@@ -44,6 +49,36 @@ function Interested({ eventId }) {
     }
 
     setLoading(true);
+    try {
+      const response = await fetch(
+        `https://api.github.com/users/${data.gitHubUsername}`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            // 'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+          },
+        }
+      );
+
+      const parse = await response.json();
+
+      if (!parse.id) {
+        setError('Invalid GitHub USername');
+        setLoading(false);
+        return;
+      }
+
+      // console.log(parse);
+    } catch (err) {
+      setLoading(false);
+      console.log(err);
+      alert(
+        'Something went wrong, if this persists, please context the developer'
+      );
+      return;
+    }
+
     try {
       const response = await fetch(
         process.env.NEXT_PUBLIC_BASE_URL +
@@ -65,7 +100,7 @@ function Interested({ eventId }) {
       const responseData = await response.json();
       setLoading(false);
       router.replace(`/hackathons/${eventId}`);
-      console.log(responseData);
+      // console.log(responseData);
       onClose();
     } catch (error) {
       setLoading(false);
@@ -95,15 +130,19 @@ function Interested({ eventId }) {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>GitHub username</FormLabel>
               <Input
                 ref={initialRef}
                 value={data.gitHubUsername}
                 onChange={(e) =>
                   setData({ ...data, gitHubUsername: e.target.value })
                 }
-                placeholder="GitHub UserName"
+                placeholder="GeoBrodas"
               />
+
+              {error === 'Invalid GitHub Username' && (
+                <AlertInput title="Invalid GitHub Username" />
+              )}
             </FormControl>
 
             <FormControl mt={4}>

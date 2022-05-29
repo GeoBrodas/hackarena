@@ -67,7 +67,7 @@ function OrganizerDetails({ data }) {
         )}
 
         {data.whatsapp && (
-          <a target="_blank" href={data.whatsapp} rel="noreferrer" passHref>
+          <a target="_blank" href={data.whatsapp} rel="noreferrer">
             <IconButton
               bg="twitter.100"
               _hover={{
@@ -79,12 +79,7 @@ function OrganizerDetails({ data }) {
         )}
 
         {data.organiserPage && (
-          <a
-            target="_blank"
-            href={data.organiserPage}
-            rel="noreferrer"
-            passHref
-          >
+          <a target="_blank" href={data.organiserPage} rel="noreferrer">
             <IconButton
               bg="twitter.100"
               _hover={{

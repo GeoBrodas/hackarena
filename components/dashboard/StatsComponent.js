@@ -16,8 +16,6 @@ function StatsComponent({ data, ic }) {
 
   // console.log(ic);
 
-  console.log(filteredIc);
-
   dayjs.extend(relativeTime);
   return (
     <Stat
