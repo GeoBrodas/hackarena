@@ -20,6 +20,7 @@
 - [x] GitHub username validation on Hackathon details page
   > Sice the form is publicly available on the `/hackathons/[eventId]` page, we decided to inlcude a validation on the GitHub username field. In this way only valuid entries will be selected.
 - [ ] Block duplicate entries
+- [ ] Fix in bug in hackathon form page (in the FaQs section )
 - [ ] Protected API routes ( **Critical** )
 - [ ] 100% responsiveness
 - [ ] Bug fixes
