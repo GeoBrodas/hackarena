@@ -1,4 +1,7 @@
 import IntrestedUsers from '../../../models/IntrestedModel';
+import dbConnect from '../../../utils/dbConnect';
+
+dbConnect();
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
