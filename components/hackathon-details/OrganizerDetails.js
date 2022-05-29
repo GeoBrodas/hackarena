@@ -44,7 +44,7 @@ function OrganizerDetails({ data }) {
         {data.twitter && (
           <a
             target="_blank"
-            href={`https://twitter.com/BrodasGeo/${data.twitter}`}
+            href={`https://twitter.com/${data.twitter}`}
             rel="noreferrer"
           >
             <IconButton
