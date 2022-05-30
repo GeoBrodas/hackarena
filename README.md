@@ -2,7 +2,8 @@
   <img src="/public/logo/H.png" alt="logo" align="center" width="200" height="200" />
 </p>
 
-<h3 align="center"> One step solution to managing hackathons </h3>
+<h2 align="center"> Hackarena </h2>
+<h5 align="center"> One step solution to managing hackathons </h5>
 
 ---
 
@@ -13,6 +14,10 @@
 
 Hackarena is a platform built to help students and companies to organize hackathons. It is a single page application that allows you to create, manage and share your hackathons.
 
+## Our Mission
+
+To deliver a robust experience with no compromises to the user experience. We aim to provide a platform for hackathons to be organized and run by the community.
+
 ## Tech Stack
 
 - [Nextjs](https://nextjs.org)
@@ -21,8 +26,8 @@ Hackarena is a platform built to help students and companies to organize hackath
 
 ## Roadmap
 
-- [x] GitHub username validation on Hackathon details page
-  > Sice the form is publicly available on the `/hackathons/[eventId]` page, we decided to inlcude a validation on the GitHub username field. In this way only valid entries will be selected.
+> A comprehensive roadmap is available on this [Notion Page](https://georgey.notion.site/Technothon-22-d8278fe17bd34a75809b66a5d0fa24aa)
+
 - [ ] Block duplicate entries
 - [ ] Fix bug in hackathon form page (in the FaQs section )
 - [ ] Protected API routes ( **Critical** )
@@ -32,6 +37,8 @@ Hackarena is a platform built to help students and companies to organize hackath
 - [ ] Improved User experience by delivering toast notifications on success/error
 - [ ] Add a form builder to accept team registrations.
 - [ ] Send email updates to participants if registered/interested.
+- [x] GitHub username validation on Hackathon details page
+  > Sice the form is publicly available on the `/hackathons/[eventId]` page, we decided to inlcude a validation on the GitHub username field. In this way only valid entries will be selected.
 
 ## Installation Setup
 
@@ -67,7 +74,3 @@ MONGO_URI=<Mongodb_uri string>
 
 - [Chakra-UI](https://chakra-ui.com/)
 - [Team Cursor](https://www.facebook.com/gecteamcursor/)
-
-## Our Mission
-
-To deliver a robust experience with no compromises to the user experience. We aim to provide a platform for hackathons to be organized and run by the community.
