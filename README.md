@@ -28,7 +28,6 @@ To deliver a robust experience with no compromises to the user experience. We ai
 
 > A comprehensive roadmap is available on this [Notion Page](https://georgey.notion.site/Technothon-22-d8278fe17bd34a75809b66a5d0fa24aa)
 
-- [ ] Block duplicate entries
 - [ ] Fix bug in hackathon form page (in the FaQs section )
 - [ ] Protected API routes ( **Critical** )
 - [ ] 100% responsiveness
@@ -37,6 +36,7 @@ To deliver a robust experience with no compromises to the user experience. We ai
 - [ ] Improved User experience by delivering toast notifications on success/error
 - [ ] Add a form builder to accept team registrations.
 - [ ] Send email updates to participants if registered/interested.
+- [x] Block duplicate entries
 - [x] GitHub username validation on Hackathon details page
   > Sice the form is publicly available on the `/hackathons/[eventId]` page, we decided to inlcude a validation on the GitHub username field. In this way only valid entries will be selected.
 
