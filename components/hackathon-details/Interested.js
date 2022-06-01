@@ -105,12 +105,13 @@ function Interested({ eventId }) {
       );
 
       const responseData = await response.json();
+      console.log(responseData);
 
       if (responseData.message !== 'Intrested user saved') {
         setError(responseData.message);
+        setLoading(false);
+        return;
       }
-
-      console.log(responseData);
 
       setLoading(false);
       router.replace(`/hackathons/${eventId}`);
@@ -143,7 +144,8 @@ function Interested({ eventId }) {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
-              {error === 'GitHub username already in the database' && (
+              {(error === 'GitHub username already in the database' ||
+                error === 'Email already in the database') && (
                 <AlertInput title="You have already signed up!" />
               )}
 

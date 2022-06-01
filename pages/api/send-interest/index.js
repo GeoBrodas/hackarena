@@ -6,6 +6,7 @@ export default async function handler(req, res) {
 
     // check if gitHubUsername is already in the database
     try {
+      // check if gitHubUsername is already in the database
       const user = await IntrestedUsers.findOne({
         gitHubUsername,
         eventId,
@@ -17,6 +18,19 @@ export default async function handler(req, res) {
         });
       }
 
+      // check if email is already in the database
+      const userEmail = await IntrestedUsers.findOne({
+        email,
+        eventId,
+      });
+
+      if (userEmail) {
+        return res.status(400).json({
+          message: 'Email already in the database',
+        });
+      }
+
+      // save the user to the database
       const intrested = new IntrestedUsers({ eventId, gitHubUsername, email });
       await intrested.save();
       res.status(201).json({ message: 'Intrested user saved' });
