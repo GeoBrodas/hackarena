@@ -20,6 +20,7 @@ function CallToHackathons() {
           }}
         />
         <Heading
+          textAlign={'center'}
           bgGradient="linear(to-l, #7928CA, #FF0080)"
           bgClip="text"
           fontSize="4xl"
@@ -28,7 +29,7 @@ function CallToHackathons() {
           Visit hackathons nearby
         </Heading>
 
-        <Text>
+        <Text textAlign={'center'}>
           Checkout the list of hackathons we recieved, as a response to
           Hackarenas Beta release
         </Text>

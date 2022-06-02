@@ -25,7 +25,7 @@ function SignInPage() {
           backgroundColor: '#fff',
           height: '50%',
         }}
-        width={{ base: '80%', md: '60%', lg: '35%' }}
+        width={{ base: '85%', md: '60%', lg: '35%' }}
         rounded="lg"
         paddingX="30px"
         alignItems="center"
@@ -40,12 +40,14 @@ function SignInPage() {
           data with anyone.
         </Text>
 
-        <Text fontWeight={'light'}>New to EvenForms? Sign in using Github</Text>
+        <Text textAlign="center" fontWeight={'light'}>
+          New to EvenForms? Sign in using Github
+        </Text>
 
         <Button
           leftIcon={<BsGithub />}
           onClick={() => signIn('github')}
-          width={'30%'}
+          width={{ sm: '50%', md: '30%' }}
           style={{
             marginTop: '20px',
           }}
@@ -61,8 +63,8 @@ function SignInPage() {
           <Button
             variant={'outline'}
             leftIcon={<BsReverseBackspaceReverse />}
-            width={'30%'}
-            borderWidth="2px"
+            width={{ sm: '50%', md: '30%' }}
+            // borderWidth="2px"
             borderColor="twitter.300"
             style={{
               marginTop: '20px',
