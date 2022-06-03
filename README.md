@@ -18,6 +18,12 @@ Hackarena is a platform built to help students and companies to organize hackath
 
 To deliver a robust experience with no compromises to the user experience. We aim to provide a platform for hackathons to be organized and run by the community.
 
+## Goal?
+
+**To make Hackarena an event managing platform focussed towards college events.**
+
+(Probably event change the name as well 🤔)
+
 ## Tech Stack
 
 - [Nextjs](https://nextjs.org)
@@ -28,9 +34,9 @@ To deliver a robust experience with no compromises to the user experience. We ai
 
 > A comprehensive roadmap is available on this [Notion Page](https://georgey.notion.site/Technothon-22-d8278fe17bd34a75809b66a5d0fa24aa)
 
+- [ ] 100% responsiveness _(in progress)_
 - [ ] Fix bug in hackathon form page (in the FaQs section )
 - [ ] Protected API routes ( **Critical** )
-- [ ] 100% responsiveness
 - [ ] Expand team?
 - [ ] Bug fixes
 - [ ] Improved User experience by delivering toast notifications on success/error
